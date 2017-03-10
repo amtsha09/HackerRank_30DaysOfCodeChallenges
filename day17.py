@@ -5,10 +5,9 @@ class Calculator(object):
     def power(self,n,p):
         self.n = n
         self.p = p
-        if self.n>0 and self.p>0:
-            return (self.n**self.p)
-        else:
+        if self.n|self.p <0:
             raise Exception("n and p should be non-negative")
+        return (self.n**self.p)
 
 if __name__ == '__main__':
 	myCalculator=Calculator()
