@@ -1,23 +1,24 @@
-# Day 26 #################
-
 import sys
-da,ma,ya = list(map(int,input().strip().split()))
-de,me,ye = list(map(int,input().strip().split()))
 
-if ya<ye:
-    fine = 0
-elif ya==ye:
-    if ma<me:
-        fine = 0
-    elif ma==me:
-        if da<=de:
-            fine = 0
+def find_fine(da,ma,ya,de,me,ye):
+    if ya<ye:
+        return 0
+    elif ya==ye:
+        if ma<me:
+            return 0
+        elif ma==me:
+            if da<=de:
+                return 0
+            else:
+                return 15 * (da-de)
         else:
-            fine = 15 * (da-de)
+            return 500 * (ma-me)
     else:
-        fine = 500 * (ma-me)
-else:
-    fine = 10000
+        return 10000
 
-print(fine)
 
+if __name__ == "__main__":
+    da,ma,ya = list(map(int,input().strip().split()))
+    de,me,ye = list(map(int,input().strip().split()))
+    fine = find_fine(da,ma,ya,de,me,ye)
+    print(fine)
