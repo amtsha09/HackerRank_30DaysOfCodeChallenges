@@ -3,7 +3,7 @@
 import sys
 import re
 
-if __name__ == "__main__"
+if __name__ == "__main__":
     N = int(input().strip())
     names = []
     for a0 in range(N):
